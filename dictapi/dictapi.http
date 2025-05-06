@@ -1,0 +1,6 @@
+@dictapi_HostAddress = http://localhost:5209
+
+GET {{dictapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
