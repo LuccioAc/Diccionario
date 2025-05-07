@@ -4,22 +4,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dictapi.Models;
 
-public partial class DictionaryContext : DbContext
+public partial class DictdbContext : DbContext
 {
-    public DictionaryContext()
+    public DictdbContext()
     {
     }
 
-    public DictionaryContext(DbContextOptions<DictionaryContext> options)
+    public DictdbContext(DbContextOptions<DictdbContext> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<Incidente> Incidentes { get; set; }
+    public virtual DbSet<Incident> Incidents { get; set; }
 
     public virtual DbSet<Palabra> Palabras { get; set; }
 
-    public virtual DbSet<Similare> Similares { get; set; }
+    public virtual DbSet<Similar> Similars { get; set; }
 
     public virtual DbSet<Uso> Usos { get; set; }
 
@@ -27,36 +27,38 @@ public partial class DictionaryContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=LaughTop; DataBase=dictionary;Integrated Security=true; TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=LaughTop; DataBase=dictdb;Integrated Security=true; TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Incidente>(entity =>
+        modelBuilder.Entity<Incident>(entity =>
         {
-            entity.HasKey(e => e.Idinc).HasName("PK__Incident__047FB545F58D6B85");
+            entity.HasKey(e => e.Idinc).HasName("PK__Incident__047FB5455AE87FD1");
+
+            entity.ToTable("Incident");
 
             entity.Property(e => e.Idinc).HasColumnName("idinc");
             entity.Property(e => e.Activo)
                 .HasDefaultValue(true)
                 .HasColumnName("activo");
-            entity.Property(e => e.Desc)
+            entity.Property(e => e.Descrip)
                 .HasColumnType("text")
-                .HasColumnName("desc");
+                .HasColumnName("descrip");
             entity.Property(e => e.Idusr).HasColumnName("idusr");
 
-            entity.HasOne(d => d.IdusrNavigation).WithMany(p => p.Incidentes)
+            entity.HasOne(d => d.IdusrNavigation).WithMany(p => p.Incidents)
                 .HasForeignKey(d => d.Idusr)
                 .OnDelete(DeleteBehavior.SetNull)
-                .HasConstraintName("FK__Incidente__idusr__66603565");
+                .HasConstraintName("FK__Incident__idusr__47DBAE45");
         });
 
         modelBuilder.Entity<Palabra>(entity =>
         {
-            entity.HasKey(e => e.Idword).HasName("PK__Palabra__89FB2F61540C4089");
+            entity.HasKey(e => e.Idword).HasName("PK__Palabra__89FB2F610EE6B522");
 
             entity.ToTable("Palabra");
 
-            entity.HasIndex(e => e.Word, "UQ__Palabra__8397405438F83F08").IsUnique();
+            entity.HasIndex(e => e.Word, "UQ__Palabra__8397405480FFC62F").IsUnique();
 
             entity.Property(e => e.Idword).HasColumnName("idword");
             entity.Property(e => e.Meaning)
@@ -68,9 +70,11 @@ public partial class DictionaryContext : DbContext
                 .HasColumnName("word");
         });
 
-        modelBuilder.Entity<Similare>(entity =>
+        modelBuilder.Entity<Similar>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Similare__3213E83FCDC7B18F");
+            entity.HasKey(e => e.Id).HasName("PK__Similar__3213E83FE2264F7E");
+
+            entity.ToTable("Similar");
 
             entity.HasIndex(e => new { e.Idword, e.Idwsimi }, "UQ_Similares").IsUnique();
 
@@ -78,38 +82,43 @@ public partial class DictionaryContext : DbContext
             entity.Property(e => e.Idword).HasColumnName("idword");
             entity.Property(e => e.Idwsimi).HasColumnName("idwsimi");
 
-            entity.HasOne(d => d.IdwordNavigation).WithMany(p => p.SimilareIdwordNavigations)
+            entity.HasOne(d => d.IdwordNavigation).WithMany(p => p.SimilarIdwordNavigations)
                 .HasForeignKey(d => d.Idword)
-                .HasConstraintName("FK__Similares__idwor__5CD6CB2B");
+                .HasConstraintName("FK__Similar__idword__3E52440B");
 
-            entity.HasOne(d => d.IdwsimiNavigation).WithMany(p => p.SimilareIdwsimiNavigations)
+            entity.HasOne(d => d.IdwsimiNavigation).WithMany(p => p.SimilarIdwsimiNavigations)
                 .HasForeignKey(d => d.Idwsimi)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Similares__idwsi__5DCAEF64");
+                .HasConstraintName("FK__Similar__idwsimi__3F466844");
         });
 
         modelBuilder.Entity<Uso>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usos__3213E83FFD1CA857");
+            entity.HasKey(e => e.Id).HasName("PK__Uso__3213E83FE78DE145");
+
+            entity.ToTable("Uso");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Desc)
+            entity.Property(e => e.Descrp)
                 .HasColumnType("text")
-                .HasColumnName("desc");
+                .HasColumnName("descrp");
             entity.Property(e => e.Idword).HasColumnName("idword");
+            entity.Property(e => e.Wuse)
+                .HasColumnType("text")
+                .HasColumnName("wuse");
 
             entity.HasOne(d => d.IdwordNavigation).WithMany(p => p.Usos)
                 .HasForeignKey(d => d.Idword)
-                .HasConstraintName("FK__Usos__idword__59063A47");
+                .HasConstraintName("FK__Uso__idword__3A81B327");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Idusr).HasName("PK__Usuario__250C90F68023A64A");
+            entity.HasKey(e => e.Idusr).HasName("PK__Usuario__250C90F6A4BDBAC7");
 
             entity.ToTable("Usuario");
 
-            entity.HasIndex(e => e.Codeusr, "UQ__Usuario__430A91805ECEE593").IsUnique();
+            entity.HasIndex(e => e.Codeusr, "UQ__Usuario__430A918060CA69EE").IsUnique();
 
             entity.Property(e => e.Idusr).HasColumnName("idusr");
             entity.Property(e => e.Codeusr)

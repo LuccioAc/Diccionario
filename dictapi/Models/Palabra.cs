@@ -11,9 +11,9 @@ public partial class Palabra
 
     public string Meaning { get; set; } = null!;
 
-    public virtual ICollection<Similare> SimilareIdwordNavigations { get; set; } = new List<Similare>();
+    public virtual ICollection<Similar> SimilarIdwordNavigations { get; set; } = new List<Similar>();
 
-    public virtual ICollection<Similare> SimilareIdwsimiNavigations { get; set; } = new List<Similare>();
+    public virtual ICollection<Similar> SimilarIdwsimiNavigations { get; set; } = new List<Similar>();
 
     public virtual ICollection<Uso> Usos { get; set; } = new List<Uso>();
 }

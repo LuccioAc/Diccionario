@@ -11,47 +11,47 @@ namespace dictapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PalabrasController : ControllerBase
+    public class UsoesController : ControllerBase
     {
         private readonly DictdbContext _context;
 
-        public PalabrasController(DictdbContext context)
+        public UsoesController(DictdbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Palabras
+        // GET: api/Usoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Palabra>>> GetPalabras()
+        public async Task<ActionResult<IEnumerable<Uso>>> GetUsos()
         {
-            return await _context.Palabras.ToListAsync();
+            return await _context.Usos.ToListAsync();
         }
 
-        // GET: api/Palabras/5
+        // GET: api/Usoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Palabra>> GetPalabra(int id)
+        public async Task<ActionResult<Uso>> GetUso(int id)
         {
-            var palabra = await _context.Palabras.FindAsync(id);
+            var uso = await _context.Usos.FindAsync(id);
 
-            if (palabra == null)
+            if (uso == null)
             {
                 return NotFound();
             }
 
-            return palabra;
+            return uso;
         }
 
-        // PUT: api/Palabras/5
+        // PUT: api/Usoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPalabra(int id, Palabra palabra)
+        public async Task<IActionResult> PutUso(int id, Uso uso)
         {
-            if (id != palabra.Idword)
+            if (id != uso.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(palabra).State = EntityState.Modified;
+            _context.Entry(uso).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace dictapi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PalabraExists(id))
+                if (!UsoExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace dictapi.Controllers
             return NoContent();
         }
 
-        // POST: api/Palabras
+        // POST: api/Usoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Palabra>> PostPalabra(Palabra palabra)
+        public async Task<ActionResult<Uso>> PostUso(Uso uso)
         {
-            _context.Palabras.Add(palabra);
+            _context.Usos.Add(uso);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPalabra", new { id = palabra.Idword }, palabra);
+            return CreatedAtAction("GetUso", new { id = uso.Id }, uso);
         }
 
-        // DELETE: api/Palabras/5
+        // DELETE: api/Usoes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePalabra(int id)
+        public async Task<IActionResult> DeleteUso(int id)
         {
-            var palabra = await _context.Palabras.FindAsync(id);
-            if (palabra == null)
+            var uso = await _context.Usos.FindAsync(id);
+            if (uso == null)
             {
                 return NotFound();
             }
 
-            _context.Palabras.Remove(palabra);
+            _context.Usos.Remove(uso);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PalabraExists(int id)
+        private bool UsoExists(int id)
         {
-            return _context.Palabras.Any(e => e.Idword == id);
+            return _context.Usos.Any(e => e.Id == id);
         }
     }
 }
