@@ -11,9 +11,9 @@ public partial class Usuario
 
     public string Nameusr { get; set; } = null!;
 
-    public string Codeusr { get; set; } = null!;
+    public string? Codeusr { get; set; }
 
     public bool Rol { get; set; }
 
-    public virtual ICollection<Incidente> Incidentes { get; set; } = new List<Incidente>();
+    public virtual ICollection<Incident> Incidents { get; set; } = new List<Incident>();
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace dictapi.Models;
 
-public partial class Similare
+public partial class Similar
 {
     public int Id { get; set; }
 

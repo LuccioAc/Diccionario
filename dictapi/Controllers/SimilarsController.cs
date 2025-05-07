@@ -11,47 +11,47 @@ namespace dictapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PalabrasController : ControllerBase
+    public class SimilarsController : ControllerBase
     {
         private readonly DictdbContext _context;
 
-        public PalabrasController(DictdbContext context)
+        public SimilarsController(DictdbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Palabras
+        // GET: api/Similars
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Palabra>>> GetPalabras()
+        public async Task<ActionResult<IEnumerable<Similar>>> GetSimilars()
         {
-            return await _context.Palabras.ToListAsync();
+            return await _context.Similars.ToListAsync();
         }
 
-        // GET: api/Palabras/5
+        // GET: api/Similars/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Palabra>> GetPalabra(int id)
+        public async Task<ActionResult<Similar>> GetSimilar(int id)
         {
-            var palabra = await _context.Palabras.FindAsync(id);
+            var similar = await _context.Similars.FindAsync(id);
 
-            if (palabra == null)
+            if (similar == null)
             {
                 return NotFound();
             }
 
-            return palabra;
+            return similar;
         }
 
-        // PUT: api/Palabras/5
+        // PUT: api/Similars/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPalabra(int id, Palabra palabra)
+        public async Task<IActionResult> PutSimilar(int id, Similar similar)
         {
-            if (id != palabra.Idword)
+            if (id != similar.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(palabra).State = EntityState.Modified;
+            _context.Entry(similar).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace dictapi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PalabraExists(id))
+                if (!SimilarExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace dictapi.Controllers
             return NoContent();
         }
 
-        // POST: api/Palabras
+        // POST: api/Similars
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Palabra>> PostPalabra(Palabra palabra)
+        public async Task<ActionResult<Similar>> PostSimilar(Similar similar)
         {
-            _context.Palabras.Add(palabra);
+            _context.Similars.Add(similar);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPalabra", new { id = palabra.Idword }, palabra);
+            return CreatedAtAction("GetSimilar", new { id = similar.Id }, similar);
         }
 
-        // DELETE: api/Palabras/5
+        // DELETE: api/Similars/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePalabra(int id)
+        public async Task<IActionResult> DeleteSimilar(int id)
         {
-            var palabra = await _context.Palabras.FindAsync(id);
-            if (palabra == null)
+            var similar = await _context.Similars.FindAsync(id);
+            if (similar == null)
             {
                 return NotFound();
             }
 
-            _context.Palabras.Remove(palabra);
+            _context.Similars.Remove(similar);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PalabraExists(int id)
+        private bool SimilarExists(int id)
         {
-            return _context.Palabras.Any(e => e.Idword == id);
+            return _context.Similars.Any(e => e.Id == id);
         }
     }
 }

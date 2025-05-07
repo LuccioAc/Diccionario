@@ -9,7 +9,9 @@ public partial class Uso
 
     public int Idword { get; set; }
 
-    public string Desc { get; set; } = null!;
+    public string Wuse { get; set; } = null!;
+
+    public string Descrp { get; set; } = null!;
 
     public virtual Palabra IdwordNavigation { get; set; } = null!;
 }
