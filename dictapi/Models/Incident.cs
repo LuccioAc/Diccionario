@@ -7,7 +7,7 @@ public partial class Incident
 {
     public int Idinc { get; set; }
 
-    public int? Idusr { get; set; }
+    public long? Idusr { get; set; }
 
     public string Descrip { get; set; } = null!;
 

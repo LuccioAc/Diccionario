@@ -3,36 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\models\\dictdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:models\\dictdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\palabrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\palabrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\incidentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\incidentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\usoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\usoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\sinonimoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\sinonimoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\similarscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\similarscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\incidentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\incidentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\antonimoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\antonimoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\palabrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\palabrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\models\\dictdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:models\\dictdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,86 +54,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-07T05:49:58.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:49:45.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "UsoesController.cs",
               "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsoesController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsoesController.cs",
               "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsoesController.cs",
               "RelativeToolTip": "Controllers\\UsoesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:36:07.699Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IncidentsController.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\IncidentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\IncidentsController.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\IncidentsController.cs",
-              "RelativeToolTip": "Controllers\\IncidentsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:34:13.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PalabrasController.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\PalabrasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PalabrasController.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\PalabrasController.cs",
-              "RelativeToolTip": "Controllers\\PalabrasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:33:42.475Z"
+              "WhenOpened": "2025-05-21T18:33:10.161Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DictdbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs",
-              "RelativeDocumentMoniker": "Models\\DictdbContext.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs",
-              "RelativeToolTip": "Models\\DictdbContext.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAACMAAAAiAAAAAAAAAA==",
+              "Title": "SinonimoesController.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\SinonimoesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SinonimoesController.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\SinonimoesController.cs",
+              "RelativeToolTip": "Controllers\\SinonimoesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:32:16.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:32:23.353Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "SimilarsController.cs",
               "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\SimilarsController.cs",
               "RelativeDocumentMoniker": "Controllers\\SimilarsController.cs",
@@ -129,11 +90,48 @@
               "RelativeToolTip": "Controllers\\SimilarsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:35:31.879Z"
+              "WhenOpened": "2025-05-21T18:31:52.462Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
+              "Title": "AntonimoesController.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\AntonimoesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AntonimoesController.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\AntonimoesController.cs",
+              "RelativeToolTip": "Controllers\\AntonimoesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T18:31:23.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IncidentsController.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\IncidentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\IncidentsController.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\IncidentsController.cs",
+              "RelativeToolTip": "Controllers\\IncidentsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T18:30:13.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PalabrasController.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\PalabrasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PalabrasController.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\PalabrasController.cs",
+              "RelativeToolTip": "Controllers\\PalabrasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T18:30:44.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
@@ -141,7 +139,55 @@
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:33:09.927Z"
+              "WhenOpened": "2025-05-21T18:28:54.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T18:27:40.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DictdbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs",
+              "RelativeDocumentMoniker": "Models\\DictdbContext.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs",
+              "RelativeToolTip": "Models\\DictdbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T18:27:21.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:26:31.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:26:30.207Z"
             }
           ]
         }

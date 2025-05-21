@@ -11,47 +11,47 @@ namespace dictapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class AntonimoesController : ControllerBase
     {
         private readonly DictdbContext _context;
 
-        public UsuariosController(DictdbContext context)
+        public AntonimoesController(DictdbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Usuarios
+        // GET: api/Antonimoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        public async Task<ActionResult<IEnumerable<Antonimo>>> GetAntonimos()
         {
-            return await _context.Usuarios.ToListAsync();
+            return await _context.Antonimos.ToListAsync();
         }
 
-        // GET: api/Usuarios/5
+        // GET: api/Antonimoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Usuario>> GetUsuario(long id)
+        public async Task<ActionResult<Antonimo>> GetAntonimo(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var antonimo = await _context.Antonimos.FindAsync(id);
 
-            if (usuario == null)
+            if (antonimo == null)
             {
                 return NotFound();
             }
 
-            return usuario;
+            return antonimo;
         }
 
-        // PUT: api/Usuarios/5
+        // PUT: api/Antonimoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(long id, Usuario usuario)
+        public async Task<IActionResult> PutAntonimo(int id, Antonimo antonimo)
         {
-            if (id != usuario.Idusr)
+            if (id != antonimo.Idant)
             {
                 return BadRequest();
             }
 
-            _context.Entry(usuario).State = EntityState.Modified;
+            _context.Entry(antonimo).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace dictapi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UsuarioExists(id))
+                if (!AntonimoExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace dictapi.Controllers
             return NoContent();
         }
 
-        // POST: api/Usuarios
+        // POST: api/Antonimoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<Antonimo>> PostAntonimo(Antonimo antonimo)
         {
-            _context.Usuarios.Add(usuario);
+            _context.Antonimos.Add(antonimo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUsuario", new { id = usuario.Idusr }, usuario);
+            return CreatedAtAction("GetAntonimo", new { id = antonimo.Idant }, antonimo);
         }
 
-        // DELETE: api/Usuarios/5
+        // DELETE: api/Antonimoes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUsuario(long id)
+        public async Task<IActionResult> DeleteAntonimo(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
-            if (usuario == null)
+            var antonimo = await _context.Antonimos.FindAsync(id);
+            if (antonimo == null)
             {
                 return NotFound();
             }
 
-            _context.Usuarios.Remove(usuario);
+            _context.Antonimos.Remove(antonimo);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool UsuarioExists(long id)
+        private bool AntonimoExists(int id)
         {
-            return _context.Usuarios.Any(e => e.Idusr == id);
+            return _context.Antonimos.Any(e => e.Idant == id);
         }
     }
 }

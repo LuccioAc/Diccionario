@@ -11,47 +11,47 @@ namespace dictapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class SinonimoesController : ControllerBase
     {
         private readonly DictdbContext _context;
 
-        public UsuariosController(DictdbContext context)
+        public SinonimoesController(DictdbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Usuarios
+        // GET: api/Sinonimoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        public async Task<ActionResult<IEnumerable<Sinonimo>>> GetSinonimos()
         {
-            return await _context.Usuarios.ToListAsync();
+            return await _context.Sinonimos.ToListAsync();
         }
 
-        // GET: api/Usuarios/5
+        // GET: api/Sinonimoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Usuario>> GetUsuario(long id)
+        public async Task<ActionResult<Sinonimo>> GetSinonimo(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var sinonimo = await _context.Sinonimos.FindAsync(id);
 
-            if (usuario == null)
+            if (sinonimo == null)
             {
                 return NotFound();
             }
 
-            return usuario;
+            return sinonimo;
         }
 
-        // PUT: api/Usuarios/5
+        // PUT: api/Sinonimoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(long id, Usuario usuario)
+        public async Task<IActionResult> PutSinonimo(int id, Sinonimo sinonimo)
         {
-            if (id != usuario.Idusr)
+            if (id != sinonimo.Idsin)
             {
                 return BadRequest();
             }
 
-            _context.Entry(usuario).State = EntityState.Modified;
+            _context.Entry(sinonimo).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace dictapi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UsuarioExists(id))
+                if (!SinonimoExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace dictapi.Controllers
             return NoContent();
         }
 
-        // POST: api/Usuarios
+        // POST: api/Sinonimoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public async Task<ActionResult<Sinonimo>> PostSinonimo(Sinonimo sinonimo)
         {
-            _context.Usuarios.Add(usuario);
+            _context.Sinonimos.Add(sinonimo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUsuario", new { id = usuario.Idusr }, usuario);
+            return CreatedAtAction("GetSinonimo", new { id = sinonimo.Idsin }, sinonimo);
         }
 
-        // DELETE: api/Usuarios/5
+        // DELETE: api/Sinonimoes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUsuario(long id)
+        public async Task<IActionResult> DeleteSinonimo(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
-            if (usuario == null)
+            var sinonimo = await _context.Sinonimos.FindAsync(id);
+            if (sinonimo == null)
             {
                 return NotFound();
             }
 
-            _context.Usuarios.Remove(usuario);
+            _context.Sinonimos.Remove(sinonimo);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool UsuarioExists(long id)
+        private bool SinonimoExists(int id)
         {
-            return _context.Usuarios.Any(e => e.Idusr == id);
+            return _context.Sinonimos.Any(e => e.Idsin == id);
         }
     }
 }

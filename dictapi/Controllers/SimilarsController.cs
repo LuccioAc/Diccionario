@@ -46,7 +46,7 @@ namespace dictapi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSimilar(int id, Similar similar)
         {
-            if (id != similar.Id)
+            if (id != similar.Idsim)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace dictapi.Controllers
             _context.Similars.Add(similar);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSimilar", new { id = similar.Id }, similar);
+            return CreatedAtAction("GetSimilar", new { id = similar.Idsim }, similar);
         }
 
         // DELETE: api/Similars/5
@@ -101,7 +101,7 @@ namespace dictapi.Controllers
 
         private bool SimilarExists(int id)
         {
-            return _context.Similars.Any(e => e.Id == id);
+            return _context.Similars.Any(e => e.Idsim == id);
         }
     }
 }

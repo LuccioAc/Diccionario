@@ -46,7 +46,7 @@ namespace dictapi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUso(int id, Uso uso)
         {
-            if (id != uso.Id)
+            if (id != uso.Iduse)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace dictapi.Controllers
             _context.Usos.Add(uso);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUso", new { id = uso.Id }, uso);
+            return CreatedAtAction("GetUso", new { id = uso.Iduse }, uso);
         }
 
         // DELETE: api/Usoes/5
@@ -101,7 +101,7 @@ namespace dictapi.Controllers
 
         private bool UsoExists(int id)
         {
-            return _context.Usos.Any(e => e.Id == id);
+            return _context.Usos.Any(e => e.Iduse == id);
         }
     }
 }
