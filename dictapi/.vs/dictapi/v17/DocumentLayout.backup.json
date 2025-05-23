@@ -39,12 +39,12 @@
       "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\DictdbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\models\\dictdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:models\\dictdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,8 +66,7 @@
               "RelativeToolTip": "Controllers\\UsoesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:33:10.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:33:10.161Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "Controllers\\SinonimoesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:32:23.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:32:23.353Z"
             },
             {
               "$type": "Document",
@@ -92,8 +90,7 @@
               "RelativeToolTip": "Controllers\\SimilarsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:31:52.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:31:52.462Z"
             },
             {
               "$type": "Document",
@@ -105,8 +102,7 @@
               "RelativeToolTip": "Controllers\\AntonimoesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:31:23.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:31:23.454Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Controllers\\PalabrasController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:30:44.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:30:44.911Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:28:54.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:28:54.857Z"
             },
             {
               "$type": "Document",
@@ -157,12 +151,11 @@
               "RelativeToolTip": "Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:27:40.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:27:40.641Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "DictdbContext.cs",
               "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs",
               "RelativeDocumentMoniker": "Models\\DictdbContext.cs",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "Models\\DictdbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T18:27:21.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T18:27:21.051Z"
             },
             {
               "$type": "Document",
@@ -183,12 +175,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:26:31.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T16:26:31.051Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WeatherForecast.cs",
@@ -196,8 +187,7 @@
               "RelativeToolTip": "WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:26:30.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T16:26:30.207Z"
             }
           ]
         }
