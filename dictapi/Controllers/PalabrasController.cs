@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using dictapi.Models;
+using dictapi.Dtos;
+using dictapi.Interfaces;
 
 namespace dictapi.Controllers
 {
@@ -13,95 +9,66 @@ namespace dictapi.Controllers
     [ApiController]
     public class PalabrasController : ControllerBase
     {
-        private readonly DictdbContext _context;
+        private readonly IWordService _wordService;
 
-        public PalabrasController(DictdbContext context)
+        public PalabrasController(IWordService wordService)
         {
-            _context = context;
+            _wordService = wordService;
         }
 
-        // GET: api/Palabras
+        //Público: obtener lista resumida de palabras (id + palabra)
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Palabra>>> GetPalabras()
+        public async Task<ActionResult<IEnumerable<IdnWordDto>>> GetPalabras()
         {
-            return await _context.Palabras.ToListAsync();
+            var palabras = await _wordService.SearchWordAsync();
+            return Ok(palabras);
         }
 
-        // GET: api/Palabras/5
+        //Público: obtener palabra completa (con relaciones)
         [HttpGet("{id}")]
-        public async Task<ActionResult<Palabra>> GetPalabra(int id)
+        public async Task<ActionResult<WordDtos>> GetPalabra(int id)
         {
-            var palabra = await _context.Palabras.FindAsync(id);
-
+            var palabra = await _wordService.GetFullWordAsync(id);
             if (palabra == null)
-            {
                 return NotFound();
-            }
 
-            return palabra;
+            return Ok(palabra);
         }
 
-        // PUT: api/Palabras/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPalabra(int id, Palabra palabra)
-        {
-            if (id != palabra.Idword)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(palabra).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PalabraExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Palabras
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //Solo Admin: crear palabra
+        [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<ActionResult<Palabra>> PostPalabra(Palabra palabra)
+        public async Task<IActionResult> PostPalabra([FromBody] WordnMeaningDto dto)
         {
-            _context.Palabras.Add(palabra);
-            await _context.SaveChangesAsync();
+            var creado = await _wordService.CreateWordAsync(dto);
+            if (!creado)
+                return BadRequest("Ya existe una palabra con ese nombre.");
 
-            return CreatedAtAction("GetPalabra", new { id = palabra.Idword }, palabra);
+            return Ok("Palabra creada correctamente.");
         }
 
-        // DELETE: api/Palabras/5
+        //Solo Admin: actualizar palabra
+        [Authorize(Roles = "admin")]
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutPalabra(int id, [FromBody] WordnMeaningDto dto)
+        {
+            var actualizado = await _wordService.UpdateWordAsync(id, dto);
+            if (!actualizado)
+                return NotFound("Palabra no encontrada.");
+
+            return Ok("Palabra actualizada.");
+        }
+
+        //Solo Admin: eliminar palabra
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePalabra(int id)
         {
-            var palabra = await _context.Palabras.FindAsync(id);
-            if (palabra == null)
-            {
-                return NotFound();
-            }
+            var eliminado = await _wordService.DeleteWordAsync(id);
+            if (!eliminado)
+                return NotFound("Palabra no encontrada.");
 
-            _context.Palabras.Remove(palabra);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool PalabraExists(int id)
-        {
-            return _context.Palabras.Any(e => e.Idword == id);
+            return Ok("Palabra eliminada.");
         }
     }
 }

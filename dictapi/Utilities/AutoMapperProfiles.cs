@@ -9,35 +9,34 @@ namespace dictapi.Utilities
         public AutoMapperProfiles() 
         {
             //Dtos Palabra
-            CreateMap<Palabra, WordDtos>().ReverseMap();
-            CreateMap<Palabra, PalabraCreateDto>().ReverseMap();
-            CreateMap<Palabra, PalabraUpdateDto>().ReverseMap();
-            CreateMap<Palabra, WordSearchResultDto>().ReverseMap();
-            CreateMap<Palabra, WordRelationDto>().ReverseMap();
+            CreateMap<Palabra, WordDtos>().ReverseMap();//Word, Meaning, Similares, Sinonimos, Antonimos
+            CreateMap<Palabra, WordnMeaningDto>().ReverseMap();//Word, Meaning Create y Update
+            CreateMap<Palabra, IdnWordDto>().ReverseMap();//Idword, Word para lista de busqueda y relacion entre palabras
             //Dtos Uso
-            CreateMap<Uso, UsoDtos>().ReverseMap();
-            CreateMap<Uso, UsoDto>().ReverseMap();
-            CreateMap<Uso, UsoUpdateDto>().ReverseMap();
+            CreateMap<Uso, UsoDtos>().ReverseMap();//Iduse, Idword, Wuse, Descrip
+            CreateMap<Uso, UsoDto>().ReverseMap();//Idword, Wuse, Descrip Create
+            CreateMap<Uso, UsoUpdateDto>().ReverseMap();//Wuse, Descrip Update
             //Dtos Sinonimo
-            CreateMap<Sinonimo, SynonymDtos>().ReverseMap();
-            CreateMap<Sinonimo, SynonymCUDto>().ReverseMap();
+            CreateMap<Sinonimo, SynonymDtos>().ReverseMap();//Idsin, Idsinwrd, Idsinwrd2
+            CreateMap<Sinonimo, SynonymCUDto>().ReverseMap();//Funciones CUD
             //Dtos Antonimo
-            CreateMap<Antonimo, AntonymDtos>().ReverseMap();
-            CreateMap<Antonimo, AntonymCUDto>().ReverseMap();
+            CreateMap<Antonimo, AntonymDtos>().ReverseMap();//Idant, Idantwrd, Idantwrd2
+            CreateMap<Antonimo, AntonymCUDto>().ReverseMap();//Funciones CUD
             //Dtos Similar
-            CreateMap<Similar, SimilarDtos>().ReverseMap();
-            CreateMap<Similar, SimilarCUDto>().ReverseMap();
+            CreateMap<Similar, SimilarDtos>().ReverseMap();//Idsim, Idsimwrd, Idsimwrd2
+            CreateMap<Similar, SimilarCUDto>().ReverseMap();//Funciones CUD
             //Dtos Usuario
-            CreateMap<Usuario, UserDtos>().ReverseMap();
-            CreateMap<Usuario, UserRegisterDto>().ReverseMap();
-            CreateMap<Usuario, UserLoginDto>().ReverseMap();
-            CreateMap<Usuario, UserUpdateDto>().ReverseMap();
-            CreateMap<Usuario, UserAdminUpdateDto>().ReverseMap();
-            CreateMap<Usuario, UserDeleteDto>().ReverseMap();
+            CreateMap<Usuario, UserDtos>().ReverseMap();//Iduser, Nameusr, Codeusr, Rol
+            CreateMap<Usuario, UpdateUserDto>().ReverseMap();//Nameusr, Passwusr Update permite nulos
+            CreateMap<Usuario, RegisterUserDto>().ReverseMap();//Nameusr, Passwusr Create
+            CreateMap<Usuario, UserLoginDto>().ReverseMap();//Codeusr, Passwusr 4 Login
+            CreateMap<Usuario, UserAdminCUDto>().ReverseMap();//Nameusr, Passwusr, Rol Create Update by Admin
+            CreateMap<Usuario, UserDeleteDto>().ReverseMap();//Passwusr Delete Confirmation
             //Dtos Incident
-            CreateMap<Incident, IncidentDtos>().ReverseMap();
-            CreateMap<Incident, IncidentCreateDto>().ReverseMap();
-            CreateMap<Incident, IncidentStatusUpdateDto>().ReverseMap();
+            CreateMap<Incident, IncidentDtos>().ReverseMap();//Idinc, Iduser, Descrip, Activo
+            CreateMap<Incident, IncidentGetDtos>().ReverseMap();//Idinc, Descrip, Activo 4 Get without Iduser
+            CreateMap<Incident, IncidentCreateDto>().ReverseMap();//Descrip, Activo Create
+            CreateMap<Incident, IncidentStatusUpdateDto>().ReverseMap();//Activo Update
         }
     }
 }

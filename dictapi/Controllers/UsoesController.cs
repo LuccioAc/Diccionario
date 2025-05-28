@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using dictapi.Dtos;
+using dictapi.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using dictapi.Models;
 
 namespace dictapi.Controllers
 {
@@ -13,95 +9,49 @@ namespace dictapi.Controllers
     [ApiController]
     public class UsoesController : ControllerBase
     {
-        private readonly DictdbContext _context;
+        private readonly IUseService _useService;
 
-        public UsoesController(DictdbContext context)
+        public UsoesController(IUseService useService)
         {
-            _context = context;
+            _useService = useService;
         }
 
-        // GET: api/Usoes
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Uso>>> GetUsos()
+        //Público GET: api/Usoes/palabra/5
+        [HttpGet("palabra/{idword}")]
+        public async Task<ActionResult<IEnumerable<UsoDtos>>> GetUsosByWordId(int idword)
         {
-            return await _context.Usos.ToListAsync();
+            var usos = await _useService.GetUsosByWordIdAsync(idword);
+            return Ok(usos);
         }
 
-        // GET: api/Usoes/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Uso>> GetUso(int id)
-        {
-            var uso = await _context.Usos.FindAsync(id);
-
-            if (uso == null)
-            {
-                return NotFound();
-            }
-
-            return uso;
-        }
-
-        // PUT: api/Usoes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUso(int id, Uso uso)
-        {
-            if (id != uso.Iduse)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(uso).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Usoes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //Solo admin POST: api/Usoes
+        [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<ActionResult<Uso>> PostUso(Uso uso)
+        public async Task<IActionResult> CreateUso([FromBody] UsoDto dto)
         {
-            _context.Usos.Add(uso);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetUso", new { id = uso.Iduse }, uso);
+            var creado = await _useService.CreateUsoAsync(dto);
+            if (!creado) return BadRequest("No se pudo crear el uso. Verifique que la palabra exista.");
+            return Ok(new { message = "Uso creado correctamente." });
         }
 
-        // DELETE: api/Usoes/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUso(int id)
+        //Solo admin PUT: api/Usoes/5
+        [Authorize(Roles = "admin")]
+        [HttpPut("{iduse}")]
+        public async Task<IActionResult> UpdateUso(int iduse, [FromBody] UsoUpdateDto dto)
         {
-            var uso = await _context.Usos.FindAsync(id);
-            if (uso == null)
-            {
-                return NotFound();
-            }
-
-            _context.Usos.Remove(uso);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            var actualizado = await _useService.UpdateUsoAsync(iduse, dto);
+            if (!actualizado) return NotFound("No se encontró el uso a actualizar.");
+            return Ok(new { message = "Uso actualizado correctamente." });
         }
 
-        private bool UsoExists(int id)
+        //Solo admin DELETE: api/Usoes/5
+        [Authorize(Roles = "admin")]
+        [HttpDelete("{iduse}")]
+        public async Task<IActionResult> DeleteUso(int iduse)
         {
-            return _context.Usos.Any(e => e.Iduse == id);
+            var eliminado = await _useService.DeleteUsoAsync(iduse);
+            if (!eliminado) return NotFound("No se encontró el uso a eliminar.");
+            return Ok(new { message = "Uso eliminado correctamente." });
         }
     }
 }

@@ -5,43 +5,131 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Incidents": {
-      "get": {
+    "/api/Auth/login": {
+      "post": {
         "tags": [
-          "Incidents"
+          "Auth"
         ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Incident"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Incident"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Incident"
-                  }
-                }
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
               }
             }
           }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
         }
-      },
+      }
+    },
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/update": {
+      "put": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/delete": {
+      "delete": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDeleteDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDeleteDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDeleteDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Incidents": {
       "post": {
         "tags": [
           "Incidents"
@@ -50,38 +138,57 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Incident"
+                "$ref": "#/components/schemas/IncidentCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Incident"
+                "$ref": "#/components/schemas/IncidentCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Incident"
+                "$ref": "#/components/schemas/IncidentCreateDto"
               }
             }
           }
         },
         "responses": {
           "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Incidents"
+        ],
+        "responses": {
+          "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Incident"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncidentGetDtos"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Incident"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncidentGetDtos"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Incident"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncidentGetDtos"
+                  }
                 }
               }
             }
@@ -89,45 +196,7 @@
         }
       }
     },
-    "/api/Incidents/{id}": {
-      "get": {
-        "tags": [
-          "Incidents"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Incident"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Incident"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Incident"
-                }
-              }
-            }
-          }
-        }
-      },
+    "/api/Incidents/estado/{id}": {
       "put": {
         "tags": [
           "Incidents"
@@ -147,17 +216,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Incident"
+                "$ref": "#/components/schemas/IncidentStatusUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Incident"
+                "$ref": "#/components/schemas/IncidentStatusUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Incident"
+                "$ref": "#/components/schemas/IncidentStatusUpdateDto"
               }
             }
           }
@@ -167,7 +236,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Incidents/{id}": {
       "delete": {
         "tags": [
           "Incidents"
@@ -203,7 +274,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Palabra"
+                    "$ref": "#/components/schemas/IdnWordDto"
                   }
                 }
               },
@@ -211,7 +282,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Palabra"
+                    "$ref": "#/components/schemas/IdnWordDto"
                   }
                 }
               },
@@ -219,7 +290,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Palabra"
+                    "$ref": "#/components/schemas/IdnWordDto"
                   }
                 }
               }
@@ -235,41 +306,24 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Palabra"
+                "$ref": "#/components/schemas/WordnMeaningDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Palabra"
+                "$ref": "#/components/schemas/WordnMeaningDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Palabra"
+                "$ref": "#/components/schemas/WordnMeaningDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Palabra"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Palabra"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Palabra"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -296,17 +350,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Palabra"
+                  "$ref": "#/components/schemas/WordDtos"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Palabra"
+                  "$ref": "#/components/schemas/WordDtos"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Palabra"
+                  "$ref": "#/components/schemas/WordDtos"
                 }
               }
             }
@@ -332,17 +386,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Palabra"
+                "$ref": "#/components/schemas/WordnMeaningDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Palabra"
+                "$ref": "#/components/schemas/WordnMeaningDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Palabra"
+                "$ref": "#/components/schemas/WordnMeaningDto"
               }
             }
           }
@@ -375,159 +429,49 @@
         }
       }
     },
-    "/api/Similars": {
+    "/api/Relaciones/sinonimos/{idWord}": {
       "get": {
         "tags": [
-          "Similars"
+          "Relaciones"
+        ],
+        "parameters": [
+          {
+            "name": "idWord",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Similar"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Similar"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Similar"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Relaciones/sinonimos": {
       "post": {
         "tags": [
-          "Similars"
+          "Relaciones"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Similar"
+                "$ref": "#/components/schemas/SynonymCUDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Similar"
+                "$ref": "#/components/schemas/SynonymCUDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Similar"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Similar"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Similar"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Similar"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Similars/{id}": {
-      "get": {
-        "tags": [
-          "Similars"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Similar"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Similar"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Similar"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Similars"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Similar"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Similar"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Similar"
+                "$ref": "#/components/schemas/SynonymCUDto"
               }
             }
           }
@@ -540,11 +484,42 @@
       },
       "delete": {
         "tags": [
-          "Similars"
+          "Relaciones"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SynonymCUDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SynonymCUDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SynonymCUDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Relaciones/antonimos/{idWord}": {
+      "get": {
+        "tags": [
+          "Relaciones"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "idWord",
             "in": "path",
             "required": true,
             "schema": {
@@ -556,47 +531,203 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Relaciones/antonimos": {
+      "post": {
+        "tags": [
+          "Relaciones"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AntonymCUDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AntonymCUDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AntonymCUDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Relaciones"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AntonymCUDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AntonymCUDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AntonymCUDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Relaciones/similares/{idWord}": {
+      "get": {
+        "tags": [
+          "Relaciones"
+        ],
+        "parameters": [
+          {
+            "name": "idWord",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Relaciones/similares": {
+      "post": {
+        "tags": [
+          "Relaciones"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimilarCUDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimilarCUDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimilarCUDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Relaciones"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimilarCUDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimilarCUDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimilarCUDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usoes/palabra/{idword}": {
+      "get": {
+        "tags": [
+          "Usoes"
+        ],
+        "parameters": [
+          {
+            "name": "idword",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsoDtos"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsoDtos"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsoDtos"
+                  }
+                }
+              }
+            }
           }
         }
       }
     },
     "/api/Usoes": {
-      "get": {
-        "tags": [
-          "Usoes"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Uso"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Uso"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Uso"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
       "post": {
         "tags": [
           "Usoes"
@@ -605,91 +736,36 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Uso"
+                "$ref": "#/components/schemas/UsoDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Uso"
+                "$ref": "#/components/schemas/UsoDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Uso"
+                "$ref": "#/components/schemas/UsoDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Uso"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Uso"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Uso"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
-    "/api/Usoes/{id}": {
-      "get": {
-        "tags": [
-          "Usoes"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Uso"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Uso"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Uso"
-                }
-              }
-            }
-          }
-        }
-      },
+    "/api/Usoes/{iduse}": {
       "put": {
         "tags": [
           "Usoes"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "iduse",
             "in": "path",
             "required": true,
             "schema": {
@@ -702,17 +778,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Uso"
+                "$ref": "#/components/schemas/UsoUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Uso"
+                "$ref": "#/components/schemas/UsoUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Uso"
+                "$ref": "#/components/schemas/UsoUpdateDto"
               }
             }
           }
@@ -729,7 +805,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "iduse",
             "in": "path",
             "required": true,
             "schema": {
@@ -758,7 +834,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Usuario"
+                    "$ref": "#/components/schemas/UserDtos"
                   }
                 }
               },
@@ -766,7 +842,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Usuario"
+                    "$ref": "#/components/schemas/UserDtos"
                   }
                 }
               },
@@ -774,7 +850,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Usuario"
+                    "$ref": "#/components/schemas/UserDtos"
                   }
                 }
               }
@@ -790,41 +866,53 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/UserAdminCUDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/UserAdminCUDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/UserAdminCUDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAdminCUDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAdminCUDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAdminCUDto"
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -841,7 +929,7 @@
             "required": true,
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             }
           }
         ],
@@ -851,60 +939,20 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Usuario"
+                  "$ref": "#/components/schemas/UserDtos"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Usuario"
+                  "$ref": "#/components/schemas/UserDtos"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Usuario"
+                  "$ref": "#/components/schemas/UserDtos"
                 }
               }
             }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Usuarios"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       },
@@ -919,7 +967,7 @@
             "required": true,
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             }
           }
         ],
@@ -972,32 +1020,21 @@
   },
   "components": {
     "schemas": {
-      "Incident": {
+      "AntonymCUDto": {
         "type": "object",
         "properties": {
-          "idinc": {
+          "idantwrd": {
             "type": "integer",
             "format": "int32"
           },
-          "idusr": {
+          "idantwrd2": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "descrip": {
-            "type": "string",
-            "nullable": true
-          },
-          "activo": {
-            "type": "boolean"
-          },
-          "idusrNavigation": {
-            "$ref": "#/components/schemas/Usuario"
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
-      "Palabra": {
+      "IdnWordDto": {
         "type": "object",
         "properties": {
           "idword": {
@@ -1007,94 +1044,139 @@
           "word": {
             "type": "string",
             "nullable": true
-          },
-          "meaning": {
+          }
+        },
+        "additionalProperties": false
+      },
+      "IncidentCreateDto": {
+        "type": "object",
+        "properties": {
+          "descrip": {
             "type": "string",
-            "nullable": true
-          },
-          "similarIdwordNavigations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Similar"
-            },
-            "nullable": true
-          },
-          "similarIdwsimiNavigations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Similar"
-            },
-            "nullable": true
-          },
-          "usos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Uso"
-            },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Similar": {
+      "IncidentGetDtos": {
         "type": "object",
         "properties": {
-          "id": {
+          "idinc": {
             "type": "integer",
             "format": "int32"
           },
-          "idword": {
-            "type": "integer",
-            "format": "int32"
+          "descrip": {
+            "type": "string",
+            "nullable": true
           },
-          "idwsimi": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "idwordNavigation": {
-            "$ref": "#/components/schemas/Palabra"
-          },
-          "idwsimiNavigation": {
-            "$ref": "#/components/schemas/Palabra"
+          "activo": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
       },
-      "Uso": {
+      "IncidentStatusUpdateDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "idword": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "wuse": {
-            "type": "string",
-            "nullable": true
-          },
-          "descrp": {
-            "type": "string",
-            "nullable": true
-          },
-          "idwordNavigation": {
-            "$ref": "#/components/schemas/Palabra"
+          "activo": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
       },
-      "Usuario": {
+      "RegisterUserDto": {
         "type": "object",
         "properties": {
-          "idusr": {
-            "type": "integer",
-            "format": "int32"
+          "nameusr": {
+            "type": "string",
+            "nullable": true
           },
           "passw": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SimilarCUDto": {
+        "type": "object",
+        "properties": {
+          "idsimwrd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idsimwrd2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SynonymCUDto": {
+        "type": "object",
+        "properties": {
+          "idsinwrd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idsinwrd2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUserDto": {
+        "type": "object",
+        "properties": {
+          "nameusr": {
+            "type": "string",
+            "nullable": true
+          },
+          "passw": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserAdminCUDto": {
+        "type": "object",
+        "properties": {
+          "idusr": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nameusr": {
+            "type": "string",
+            "nullable": true
+          },
+          "passw": {
+            "type": "string",
+            "nullable": true
+          },
+          "rol": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserDeleteDto": {
+        "type": "object",
+        "properties": {
+          "passw": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserDtos": {
+        "type": "object",
+        "properties": {
+          "idusr": {
+            "type": "integer",
+            "format": "int64"
           },
           "nameusr": {
             "type": "string",
@@ -1106,12 +1188,73 @@
           },
           "rol": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserLoginDto": {
+        "type": "object",
+        "properties": {
+          "codeusr": {
+            "type": "string",
+            "nullable": true
           },
-          "incidents": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Incident"
-            },
+          "passw": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UsoDto": {
+        "type": "object",
+        "properties": {
+          "idword": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "wuse": {
+            "type": "string",
+            "nullable": true
+          },
+          "descrip": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UsoDtos": {
+        "type": "object",
+        "properties": {
+          "iduse": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idword": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "wuse": {
+            "type": "string",
+            "nullable": true
+          },
+          "descrip": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UsoUpdateDto": {
+        "type": "object",
+        "properties": {
+          "wuse": {
+            "type": "string",
+            "nullable": true
+          },
+          "descrip": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -1134,6 +1277,55 @@
             "readOnly": true
           },
           "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WordDtos": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string",
+            "nullable": true
+          },
+          "meaning": {
+            "type": "string",
+            "nullable": true
+          },
+          "similares": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdnWordDto"
+            },
+            "nullable": true
+          },
+          "sinonimos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdnWordDto"
+            },
+            "nullable": true
+          },
+          "antonimos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdnWordDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WordnMeaningDto": {
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string",
+            "nullable": true
+          },
+          "meaning": {
             "type": "string",
             "nullable": true
           }
