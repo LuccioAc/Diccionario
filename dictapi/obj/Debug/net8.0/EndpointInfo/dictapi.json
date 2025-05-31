@@ -196,7 +196,7 @@
         }
       }
     },
-    "/api/Incidents/estado/{id}": {
+    "/api/Incidents/{id}/status": {
       "put": {
         "tags": [
           "Incidents"
@@ -866,17 +866,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserAdminCUDto"
+                "$ref": "#/components/schemas/UserAdminCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserAdminCUDto"
+                "$ref": "#/components/schemas/UserAdminCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserAdminCUDto"
+                "$ref": "#/components/schemas/UserAdminCreateDto"
               }
             }
           }
@@ -895,17 +895,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserAdminCUDto"
+                "$ref": "#/components/schemas/UserAdminUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserAdminCUDto"
+                "$ref": "#/components/schemas/UserAdminUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserAdminCUDto"
+                "$ref": "#/components/schemas/UserAdminUpdateDto"
               }
             }
           }
@@ -1140,7 +1140,28 @@
         },
         "additionalProperties": false
       },
-      "UserAdminCUDto": {
+      "UserAdminCreateDto": {
+        "type": "object",
+        "properties": {
+          "idusr": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nameusr": {
+            "type": "string",
+            "nullable": true
+          },
+          "passw": {
+            "type": "string",
+            "nullable": true
+          },
+          "rol": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserAdminUpdateDto": {
         "type": "object",
         "properties": {
           "idusr": {
@@ -1312,6 +1333,13 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/IdnWordDto"
+            },
+            "nullable": true
+          },
+          "usos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsoDtos"
             },
             "nullable": true
           }

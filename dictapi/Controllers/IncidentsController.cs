@@ -28,12 +28,12 @@ namespace dictapi.Controllers
                 return Unauthorized("Usuario no válido");
 
             var creado = await _incidentService.CreateIncidentAsync(codeusr, dto);
-            return creado ? Ok("Incidente creado") : BadRequest("No se pudo crear el incidente");
+            return creado ? Ok(new { messagge="Incidente creado" }) : BadRequest(new { error = "No se pudo crear el incidente" });
         }
 
         // GET: api/Incidents
         // Obtener todos los incidentes (solo admin)
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<List<IncidentGetDtos>>> ObtenerTodos()
         {
@@ -43,22 +43,22 @@ namespace dictapi.Controllers
 
         // PUT: api/Incidents/estado/5
         // Cambiar estado de un incidente (solo admin)
-        [Authorize(Roles = "admin")]
-        [HttpPut("estado/{id}")]
+        [Authorize(Roles = "Admin")]
+        [HttpPut("{id}/status")]
         public async Task<IActionResult> CambiarEstado(int id, [FromBody] IncidentStatusUpdateDto dto)
         {
             var actualizado = await _incidentService.ChangeIncidentStateAsync(id, dto.Activo);
-            return actualizado ? Ok("Estado actualizado") : NotFound("Incidente no encontrado");
+            return actualizado ? Ok( new { message = "Estado actualizado" }) : NotFound(new { error = "Incidente no encontrado" });
         }
 
         // DELETE: api/Incidents/5
         // Eliminar incidente (solo admin)
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> EliminarIncidente(int id)
         {
             var eliminado = await _incidentService.DeleteIncidentAsync(id);
-            return eliminado ? Ok("Incidente eliminado") : NotFound("Incidente no encontrado");
+            return eliminado ? Ok(new { message = "Incidente eliminado" }) : NotFound(new { error = "Incidente no encontrado" });
         }
     }
 }

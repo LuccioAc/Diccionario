@@ -118,7 +118,7 @@
   {
     "ContainingType": "dictapi.Controllers.IncidentsController",
     "Method": "CambiarEstado",
-    "RelativePath": "api/Incidents/estado/{id}",
+    "RelativePath": "api/Incidents/{id}/status",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -488,7 +488,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "dictapi.Dtos.UserAdminCUDto",
+        "Type": "dictapi.Dtos.UserAdminCreateDto",
         "IsRequired": true
       }
     ],
@@ -504,7 +504,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "dictapi.Dtos.UserAdminCUDto",
+        "Type": "dictapi.Dtos.UserAdminUpdateDto",
         "IsRequired": true
       }
     ],

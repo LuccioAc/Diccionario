@@ -7,6 +7,7 @@
         public List<IdnWordDto> Similares { get; set; } = new();
         public List<IdnWordDto> Sinonimos { get; set; } = new();
         public List<IdnWordDto> Antonimos { get; set; } = new();
+        public List<UsoDtos> Usos { get; set; } = new();
     }
     //Dto para crear y modificar palabras
     public class WordnMeaningDto

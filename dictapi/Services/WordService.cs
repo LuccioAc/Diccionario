@@ -11,12 +11,14 @@ namespace dictapi.Services
         private readonly DictdbContext _context;
         private readonly IMapper _mapper;
         private readonly IRelationService _relationService;
-        
-        public WordService(DictdbContext context, IMapper mapper, IRelationService relationService)
+        private readonly IUseService _useService;
+
+        public WordService(DictdbContext context, IMapper mapper, IRelationService relationService, IUseService useService)
         {
             _context = context;
             _mapper = mapper;
             _relationService = relationService;
+            _useService = useService;
         }
 
         public async Task<List<IdnWordDto>> SearchWordAsync()
@@ -73,6 +75,7 @@ namespace dictapi.Services
             palabraDto.Similares = await _relationService.GetSimilarsAsync(id);
             palabraDto.Sinonimos = await _relationService.GetSynonymsAsync(id);
             palabraDto.Antonimos = await _relationService.GetAntonymsAsync(id);
+            palabraDto.Usos = await _useService.GetUsosByWordIdAsync(id);
 
             return palabraDto;
         }

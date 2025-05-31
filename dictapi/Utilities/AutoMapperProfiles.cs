@@ -30,7 +30,8 @@ namespace dictapi.Utilities
             CreateMap<Usuario, UpdateUserDto>().ReverseMap();//Nameusr, Passwusr Update permite nulos
             CreateMap<Usuario, RegisterUserDto>().ReverseMap();//Nameusr, Passwusr Create
             CreateMap<Usuario, UserLoginDto>().ReverseMap();//Codeusr, Passwusr 4 Login
-            CreateMap<Usuario, UserAdminCUDto>().ReverseMap();//Nameusr, Passwusr, Rol Create Update by Admin
+            CreateMap<Usuario, UserAdminCreateDto>().ReverseMap();//Nameusr, Passwusr, Rol Create by Admin
+            CreateMap<Usuario, UserAdminUpdateDto>().ReverseMap();//Nameusr, Passwusr?, Rol Update by Admin
             CreateMap<Usuario, UserDeleteDto>().ReverseMap();//Passwusr Delete Confirmation
             //Dtos Incident
             CreateMap<Incident, IncidentDtos>().ReverseMap();//Idinc, Iduser, Descrip, Activo

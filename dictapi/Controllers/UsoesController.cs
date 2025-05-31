@@ -25,7 +25,7 @@ namespace dictapi.Controllers
         }
 
         //Solo admin POST: api/Usoes
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateUso([FromBody] UsoDto dto)
         {
@@ -35,7 +35,7 @@ namespace dictapi.Controllers
         }
 
         //Solo admin PUT: api/Usoes/5
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("{iduse}")]
         public async Task<IActionResult> UpdateUso(int iduse, [FromBody] UsoUpdateDto dto)
         {
@@ -45,7 +45,7 @@ namespace dictapi.Controllers
         }
 
         //Solo admin DELETE: api/Usoes/5
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{iduse}")]
         public async Task<IActionResult> DeleteUso(int iduse)
         {

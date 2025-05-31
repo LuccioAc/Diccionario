@@ -25,7 +25,7 @@ namespace dictapi.Controllers
             return Ok(result);
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("sinonimos")]
         public async Task<IActionResult> CreateSynonym([FromBody] SynonymCUDto dto)
         {
@@ -33,7 +33,7 @@ namespace dictapi.Controllers
             return result ? Ok() : BadRequest("Error al crear sinónimo.");
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("sinonimos")]
         public async Task<IActionResult> DeleteSynonym([FromBody] SynonymCUDto dto)
         {
@@ -50,7 +50,7 @@ namespace dictapi.Controllers
             return Ok(result);
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("antonimos")]
         public async Task<IActionResult> CreateAntonym([FromBody] AntonymCUDto dto)
         {
@@ -58,7 +58,7 @@ namespace dictapi.Controllers
             return result ? Ok() : BadRequest("Error al crear antónimo.");
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("antonimos")]
         public async Task<IActionResult> DeleteAntonym([FromBody] AntonymCUDto dto)
         {
@@ -75,7 +75,7 @@ namespace dictapi.Controllers
             return Ok(result);
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("similares")]
         public async Task<IActionResult> CreateSimilar([FromBody] SimilarCUDto dto)
         {
@@ -83,7 +83,7 @@ namespace dictapi.Controllers
             return result ? Ok() : BadRequest("Error al crear relación de similitud.");
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("similares")]
         public async Task<IActionResult> DeleteSimilar([FromBody] SimilarCUDto dto)
         {

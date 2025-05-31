@@ -41,8 +41,8 @@ namespace dictapi.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterUserDto dto)
         {
-            _userRepository.Add(dto);
-            return Ok();
+            var codeusr = _userRepository.Add(dto);
+            return Ok(new { codeusr });
         }
 
 

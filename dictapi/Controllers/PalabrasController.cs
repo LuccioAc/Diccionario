@@ -36,7 +36,7 @@ namespace dictapi.Controllers
         }
 
         //Solo Admin: crear palabra
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> PostPalabra([FromBody] WordnMeaningDto dto)
         {
@@ -48,7 +48,7 @@ namespace dictapi.Controllers
         }
 
         //Solo Admin: actualizar palabra
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPalabra(int id, [FromBody] WordnMeaningDto dto)
         {
@@ -60,7 +60,7 @@ namespace dictapi.Controllers
         }
 
         //Solo Admin: eliminar palabra
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePalabra(int id)
         {

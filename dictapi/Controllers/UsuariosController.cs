@@ -8,7 +8,7 @@ namespace dictapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "admin")] // Solo accesible por administradores
+    [Authorize(Roles = "Admin")] // Solo accesible por administradores
     public class UsuariosController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
@@ -39,7 +39,7 @@ namespace dictapi.Controllers
 
         // POST: api/Usuarios
         [HttpPost]
-        public IActionResult PostUsuario(UserAdminCUDto dto)
+        public IActionResult PostUsuario(UserAdminCreateDto dto)
         {
             _userRepository.AddByAdmin(dto);
             return Ok(new { message = "Usuario creado exitosamente" });
@@ -47,9 +47,13 @@ namespace dictapi.Controllers
 
         // PUT: api/Usuarios
         [HttpPut]
-        public IActionResult PutUsuario(UserAdminCUDto dto)
+        public IActionResult PutUsuario(UserAdminUpdateDto dto)
         {
+            if (dto == null)
+                return BadRequest(new { message = "DTO es nulo" });
+
             var actualizado = _userRepository.UpdateByAdmin(dto);
+
             if (!actualizado)
                 return NotFound(new { message = "Usuario no encontrado" });
 

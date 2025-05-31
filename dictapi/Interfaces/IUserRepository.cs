@@ -1,4 +1,5 @@
 ﻿using dictapi.Dtos;
+using Microsoft.AspNetCore.Mvc;
 
 namespace dictapi.Interfaces
 {
@@ -10,7 +11,7 @@ namespace dictapi.Interfaces
         UserDtos? GetById(long idusr);
         
         // Registrar usuario
-        void Add(RegisterUserDto userRegisterDto);
+        string Add(RegisterUserDto userRegisterDto);
         // Actualizar nombre o contraseña (por usuario)
         bool Update(long idusr, UpdateUserDto userUpdateDto);
         
@@ -21,9 +22,9 @@ namespace dictapi.Interfaces
         // Listar todos los usuarios
         IEnumerable<UserDtos> GetAll();
         // Crear usuario
-        void AddByAdmin(UserAdminCUDto dto);
+        void AddByAdmin(UserAdminCreateDto dto);
         // Actualizar usuario
-        bool UpdateByAdmin(UserAdminCUDto dto);
+        bool UpdateByAdmin(UserAdminUpdateDto dto);
         // Eliminar por ID
         void Delete(long idusr);
     }

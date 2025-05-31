@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dictapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08918506f54557f20e24225ee6ae8960dd145feb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bf5c3d1cda5833603fae4cb5b67db8b95e85724")]
 [assembly: System.Reflection.AssemblyProductAttribute("dictapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dictapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

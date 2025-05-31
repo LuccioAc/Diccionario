@@ -22,7 +22,8 @@ namespace dictapi.Services
         {
             var claims = new[]
             {
-            new Claim(ClaimTypes.Name, codeusr),
+            //new Claim(ClaimTypes.Name, codeusr),
+            new Claim("codeusr", codeusr),
             new Claim(ClaimTypes.Role, rol ? "Admin" : "User")
         };
 

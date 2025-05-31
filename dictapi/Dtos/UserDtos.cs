@@ -24,11 +24,18 @@
         public string Passw { get; set; } = null!;
     }
     //Dto para registrar y actualizar usuarios por admin
-    public class UserAdminCUDto
+    public class UserAdminCreateDto
     {
         public long Idusr { get; set; }
         public string Nameusr { get; set; } = null!;
         public string Passw { get; set; } = null!;
+        public bool Rol { get; set; }
+    }
+    public class UserAdminUpdateDto
+    {
+        public long Idusr { get; set; }
+        public string Nameusr { get; set; } = null!;
+        public string? Passw { get; set; }
         public bool Rol { get; set; }
     }
     //Dto para confirmación de eliminación de la cuenta mediante passw

@@ -2,6 +2,7 @@
 using dictapi.Interfaces;
 using dictapi.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace dictapi.Repositories
 {
@@ -14,7 +15,7 @@ namespace dictapi.Repositories
             _context = context;
         }
 
-        public void Add(RegisterUserDto userRegisterDto)
+        public string Add(RegisterUserDto userRegisterDto)
         {
             var hasher = new PasswordHasher<Usuario>();
             var user = new Usuario
@@ -28,13 +29,19 @@ namespace dictapi.Repositories
 
             _context.Usuarios.Add(user);
             _context.SaveChanges();
+            // Procesa el Nameusr para el codeusr
+            var processedNameusr = user.Nameusr.ToUpper().Replace(" ", "");
+            if (processedNameusr.Length > 10)
+                processedNameusr = processedNameusr.Substring(0, 10);
 
-            // Genera codeusr (ej. username#id)
-            user.Codeusr = $"{user.Nameusr}#{user.Idusr}";
+            // Genera codeusr (ej. USERNAME#id)
+            user.Codeusr = $"{processedNameusr}#{user.Idusr}";
             _context.SaveChanges();
+
+            return user.Codeusr;
         }
 
-        public void AddByAdmin(UserAdminCUDto dto)
+        public void AddByAdmin(UserAdminCreateDto dto)
         {
             var hasher = new PasswordHasher<Usuario>();
             var user = new Usuario
@@ -145,7 +152,7 @@ namespace dictapi.Repositories
         }
 
 
-        public bool UpdateByAdmin(UserAdminCUDto dto)
+        public bool UpdateByAdmin(UserAdminUpdateDto dto)
         {
             var user = _context.Usuarios.FirstOrDefault(u => u.Idusr == dto.Idusr);
             if (user == null) return false;
@@ -153,8 +160,12 @@ namespace dictapi.Repositories
             user.Nameusr = dto.Nameusr;
             user.Rol = dto.Rol;
 
-            var hasher = new PasswordHasher<Usuario>();
-            user.Passw = hasher.HashPassword(user, dto.Passw);
+            // Solo actualizar la contraseña si es proporcionada
+            if (!string.IsNullOrEmpty(dto.Passw))
+            {
+                var hasher = new PasswordHasher<Usuario>();
+                user.Passw = hasher.HashPassword(user, dto.Passw);
+            }
 
             _context.SaveChanges();
             return true;
