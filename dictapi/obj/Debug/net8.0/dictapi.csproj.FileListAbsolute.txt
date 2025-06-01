@@ -583,3 +583,11 @@ C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\obj\Debug\net8.0\refint\dict
 C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\obj\Debug\net8.0\dictapi.pdb
 C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\obj\Debug\net8.0\dictapi.genruntimeconfig.cache
 C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\obj\Debug\net8.0\ref\dictapi.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\lucio\Documents\GitHub\Diccionario\dictapi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using dictapi.Dtos;
+using dictapi.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using dictapi.Models;
+using System.Security.Claims;
 
 namespace dictapi.Controllers
 {
@@ -13,95 +10,55 @@ namespace dictapi.Controllers
     [ApiController]
     public class IncidentsController : ControllerBase
     {
-        private readonly DictdbContext _context;
+        private readonly IIncidentService _incidentService;
 
-        public IncidentsController(DictdbContext context)
+        public IncidentsController(IIncidentService incidentService)
         {
-            _context = context;
-        }
-
-        // GET: api/Incidents
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Incident>>> GetIncidents()
-        {
-            return await _context.Incidents.ToListAsync();
-        }
-
-        // GET: api/Incidents/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Incident>> GetIncident(int id)
-        {
-            var incident = await _context.Incidents.FindAsync(id);
-
-            if (incident == null)
-            {
-                return NotFound();
-            }
-
-            return incident;
-        }
-
-        // PUT: api/Incidents/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutIncident(int id, Incident incident)
-        {
-            if (id != incident.Idinc)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(incident).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!IncidentExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            _incidentService = incidentService;
         }
 
         // POST: api/Incidents
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // Crear incidente (usuario autenticado)
+        [Authorize]
         [HttpPost]
-        public async Task<ActionResult<Incident>> PostIncident(Incident incident)
+        public async Task<IActionResult> CrearIncidente([FromBody] IncidentCreateDto dto)
         {
-            _context.Incidents.Add(incident);
-            await _context.SaveChangesAsync();
+            var codeusr = User.FindFirstValue("codeusr");
+            if (string.IsNullOrEmpty(codeusr))
+                return Unauthorized("Usuario no válido");
 
-            return CreatedAtAction("GetIncident", new { id = incident.Idinc }, incident);
+            var creado = await _incidentService.CreateIncidentAsync(codeusr, dto);
+            return creado ? Ok(new { messagge="Incidente creado" }) : BadRequest(new { error = "No se pudo crear el incidente" });
+        }
+
+        // GET: api/Incidents
+        // Obtener todos los incidentes (solo admin)
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<ActionResult<List<IncidentGetDtos>>> ObtenerTodos()
+        {
+            var incidentes = await _incidentService.GetAllIncidentsAsync();
+            return Ok(incidentes);
+        }
+
+        // PUT: api/Incidents/estado/5
+        // Cambiar estado de un incidente (solo admin)
+        [Authorize(Roles = "Admin")]
+        [HttpPut("{id}/status")]
+        public async Task<IActionResult> CambiarEstado(int id, [FromBody] IncidentStatusUpdateDto dto)
+        {
+            var actualizado = await _incidentService.ChangeIncidentStateAsync(id, dto.Activo);
+            return actualizado ? Ok( new { message = "Estado actualizado" }) : NotFound(new { error = "Incidente no encontrado" });
         }
 
         // DELETE: api/Incidents/5
+        // Eliminar incidente (solo admin)
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteIncident(int id)
+        public async Task<IActionResult> EliminarIncidente(int id)
         {
-            var incident = await _context.Incidents.FindAsync(id);
-            if (incident == null)
-            {
-                return NotFound();
-            }
-
-            _context.Incidents.Remove(incident);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool IncidentExists(int id)
-        {
-            return _context.Incidents.Any(e => e.Idinc == id);
+            var eliminado = await _incidentService.DeleteIncidentAsync(id);
+            return eliminado ? Ok(new { message = "Incidente eliminado" }) : NotFound(new { error = "Incidente no encontrado" });
         }
     }
 }

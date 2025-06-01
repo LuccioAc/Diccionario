@@ -5,11 +5,11 @@ namespace dictapi.Models;
 
 public partial class Usuario
 {
-    public int Idusr { get; set; }
-
-    public string Passw { get; set; } = null!;
+    public long Idusr { get; set; }
 
     public string Nameusr { get; set; } = null!;
+
+    public string Passw { get; set; } = null!;
 
     public string? Codeusr { get; set; }
 

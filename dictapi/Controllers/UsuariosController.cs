@@ -1,107 +1,75 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using dictapi.Dtos;
+using dictapi.Interfaces;
 using dictapi.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace dictapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")] // Solo accesible por administradores
     public class UsuariosController : ControllerBase
     {
-        private readonly DictdbContext _context;
+        private readonly IUserRepository _userRepository;
 
-        public UsuariosController(DictdbContext context)
+        public UsuariosController(IUserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
         }
 
         // GET: api/Usuarios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        public ActionResult<IEnumerable<UserDtos>> GetUsuarios()
         {
-            return await _context.Usuarios.ToListAsync();
+            var usuarios = _userRepository.GetAll();
+            return Ok(usuarios);
         }
 
         // GET: api/Usuarios/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Usuario>> GetUsuario(int id)
+        public ActionResult<UserDtos> GetUsuario(long id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
-
+            var usuario = _userRepository.GetById(id);
             if (usuario == null)
-            {
                 return NotFound();
-            }
 
-            return usuario;
-        }
-
-        // PUT: api/Usuarios/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
-        {
-            if (id != usuario.Idusr)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(usuario).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsuarioExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return Ok(usuario);
         }
 
         // POST: api/Usuarios
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
+        public IActionResult PostUsuario(UserAdminCreateDto dto)
         {
-            _context.Usuarios.Add(usuario);
-            await _context.SaveChangesAsync();
+            _userRepository.AddByAdmin(dto);
+            return Ok(new { message = "Usuario creado exitosamente" });
+        }
 
-            return CreatedAtAction("GetUsuario", new { id = usuario.Idusr }, usuario);
+        // PUT: api/Usuarios
+        [HttpPut]
+        public IActionResult PutUsuario(UserAdminUpdateDto dto)
+        {
+            if (dto == null)
+                return BadRequest(new { message = "DTO es nulo" });
+
+            var actualizado = _userRepository.UpdateByAdmin(dto);
+
+            if (!actualizado)
+                return NotFound(new { message = "Usuario no encontrado" });
+
+            return Ok(new { message = "Usuario actualizado exitosamente" });
         }
 
         // DELETE: api/Usuarios/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUsuario(int id)
+        public IActionResult DeleteUsuario(long id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = _userRepository.GetById(id);
             if (usuario == null)
-            {
-                return NotFound();
-            }
+                return NotFound(new { message = "Usuario no encontrado" });
 
-            _context.Usuarios.Remove(usuario);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool UsuarioExists(int id)
-        {
-            return _context.Usuarios.Any(e => e.Idusr == id);
+            _userRepository.Delete(id);
+            return Ok(new { message = "Usuario eliminado exitosamente" });
         }
     }
 }

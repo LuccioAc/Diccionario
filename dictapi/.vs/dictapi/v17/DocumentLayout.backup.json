@@ -3,28 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\dtos\\usodtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:dtos\\usodtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\services\\useservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:services\\useservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\usoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\usoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\similarscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\similarscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\services\\relationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:services\\relationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\incidentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\incidentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\dtos\\synonymdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:dtos\\synonymdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\palabrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\palabrascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\utilities\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:utilities\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\DictdbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|c:\\users\\lucio\\documents\\github\\diccionario\\dictapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE149ADC-1911-43C6-9946-6C2BF70D8F5A}|dictapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,85 +58,162 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsoesController.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsoesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsoesController.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsoesController.cs",
-              "RelativeToolTip": "Controllers\\UsoesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:36:07.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SimilarsController.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\SimilarsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SimilarsController.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\SimilarsController.cs",
-              "RelativeToolTip": "Controllers\\SimilarsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UsoDtos.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Dtos\\UsoDtos.cs",
+              "RelativeDocumentMoniker": "Dtos\\UsoDtos.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Dtos\\UsoDtos.cs",
+              "RelativeToolTip": "Dtos\\UsoDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:35:31.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IncidentsController.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\IncidentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\IncidentsController.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\IncidentsController.cs",
-              "RelativeToolTip": "Controllers\\IncidentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:34:13.97Z",
+              "WhenOpened": "2025-05-31T20:17:25.288Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PalabrasController.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\PalabrasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PalabrasController.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\PalabrasController.cs",
-              "RelativeToolTip": "Controllers\\PalabrasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UsoesController.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsoesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsoesController.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsoesController.cs",
+              "RelativeToolTip": "Controllers\\UsoesController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:33:42.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:33:09.927Z",
+              "WhenOpened": "2025-05-31T20:16:37.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "DictdbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs",
-              "RelativeDocumentMoniker": "Models\\DictdbContext.cs",
-              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Models\\DictdbContext.cs",
-              "RelativeToolTip": "Models\\DictdbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SynonymDtos.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Dtos\\SynonymDtos.cs",
+              "RelativeDocumentMoniker": "Dtos\\SynonymDtos.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Dtos\\SynonymDtos.cs",
+              "RelativeToolTip": "Dtos\\SynonymDtos.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T05:32:16.445Z",
+              "WhenOpened": "2025-05-31T20:04:22.017Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RelationService.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Services\\RelationService.cs",
+              "RelativeDocumentMoniker": "Services\\RelationService.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Services\\RelationService.cs",
+              "RelativeToolTip": "Services\\RelationService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T20:03:20.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Utilities\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "Utilities\\AutoMapperProfiles.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Utilities\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "Utilities\\AutoMapperProfiles.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAB8AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T19:35:38.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T19:35:16.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-30T15:42:41.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UseService.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Services\\UseService.cs",
+              "RelativeDocumentMoniker": "Services\\UseService.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Services\\UseService.cs",
+              "RelativeToolTip": "Services\\UseService.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T20:17:09.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T18:30:03.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserDtos.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Dtos\\UserDtos.cs",
+              "RelativeDocumentMoniker": "Dtos\\UserDtos.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Dtos\\UserDtos.cs",
+              "RelativeToolTip": "Dtos\\UserDtos.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T00:52:33.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T17:52:50.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\lucio\\Documents\\GitHub\\Diccionario\\dictapi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAiwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:40:38.349Z"
             }
           ]
         }
